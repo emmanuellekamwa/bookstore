@@ -8,19 +8,19 @@ import Categories from './Categories';
 import store from '../store';
 
 function App() {
-    return (
-      <Provider store={store}>
-        <Navbar />
-        <Switch>
-          <Route path="/books">
-            <Books />
-          </Route>
-          <Route path="/categories">
-            <Categories />
-          </Route>
-        </Switch>
-      </Provider>
-    );
-  }
-  
-  export default App;
+  return (
+    <Provider store={store}>
+      <Navbar />
+      <Switch>
+        <Route path="/books">
+          <Books />
+        </Route>
+        <Route path="/categories">
+          <Categories />
+        </Route>
+      </Switch>
+    </Provider>
+  );
+}
+
+export default App;
