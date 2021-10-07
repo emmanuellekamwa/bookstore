@@ -1,45 +1,18 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { removeBook } from '../redux/books/books';
-import Form from './Form';
+import PropTypes from 'prop-types';
 
-const Books = () => {
-  const books = useSelector((state) => state.books);
-  const dispatch = useDispatch();
+const Books = ({ id, name, author }) => (
+  <li key={id}>
+    <p>{name}</p>
+    <p>{author}</p>
+    <button type="button">Remove</button>
+  </li>
+);
 
-  return (
-    <div>
-      <ul>
-        {
-          books.map((book) => (
-            <li
-              key={book.id}
-            >
-              Book title:
-              {' '}
-              {book.title}
-              {' '}
-              -
-              Category:
-              {' '}
-              {book.category}
-              {' '}
-              -
-              {' '}
-              <button
-                type="button"
-                onClick={() => dispatch(removeBook(book))}
-              >
-                Remove book
-              </button>
-            </li>
-          ))
-        }
-      </ul>
-      <Form />
-    </div>
-
-  );
+Books.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
 };
 
 export default Books;

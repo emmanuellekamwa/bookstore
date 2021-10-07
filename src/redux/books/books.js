@@ -2,7 +2,7 @@ const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
 
 const initialState = {
-  books: [{ title: 'Book 1', id: 0, category: 'Sci-fi' }],
+  books: [{ title: 'Book 1', id: 0, category: 'Fairy Tale' }],
 };
 
 const reducer = (state = initialState, action) => {
